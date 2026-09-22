@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Example {
+    int a, b;
+
+public:
+    void getab(int, int);
+    void display();
+
+    // average is a friend function
+    friend void average(Example);
+};
+
+void Example::getab(int x, int y) {
+    a = x;
+    b = y;
+}
+
+void Example::display() {
+    cout << a << " " << b << endl;
+}
+
+void average(Example E1) {  // friend function call noramly call hua (Example::)-> iski use hi nhi padi
+    int avg = (E1.a + E1.b) / 2;
+    cout << "Average = " << avg << endl;
+}
+
+int main() {
+    Example E1;
+
+    E1.getab(10, 20);
+    E1.display();
+    average(E1);
+
+    return 0;
+}

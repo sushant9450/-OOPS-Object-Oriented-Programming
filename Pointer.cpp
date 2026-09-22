@@ -7,8 +7,10 @@ int main() {
     int *p;
     p=&a;
     cout<<*p<<endl;
-    cout<<*(&p)<<endl;
+    cout<<*(&p)<<endl; 
     cout<<&p;
+
+    cout<<sizeof(a);
 
     return 0;
 }
